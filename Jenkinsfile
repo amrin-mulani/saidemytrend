@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-      stages {
+
         stage('SonarQube analysis') {
             environment{
                  scannerHome = tool 'amrin-sonarqube-scanner'
@@ -18,9 +18,9 @@ pipeline {
                  
         
             steps {
-                  withsonarQubeEnv('amrin-sonarqube-server'){
+                  withSonarQubeEnv('amrin-sonarqube-server'){
                    sh "${scannerHome}/bin/sonar-scanner"
-            }
+            
         }
       }
     }
