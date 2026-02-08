@@ -14,8 +14,7 @@ pipeline {
             environment{
                  scannerHome = tool 'amrin-sonarqube-scanner'
             }
-        }
-         
+                 
         
             steps {
                   withsonarQubeEnv('amrin-sonarqube-server'){
@@ -23,5 +22,6 @@ pipeline {
             }
         }
       }
+}
 }
  
